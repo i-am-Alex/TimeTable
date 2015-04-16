@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Расписание</string>
+    <string name="action_settings">Settings</string>
+    <string name="left">left</string>
+    <string name="center">center</string>
+    <string name="right">right</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="routesstr">Маршруты</string>
+    <string name="timestr">Время</string>
+    <string name="stopsstr">Остановки</string>
+    <string name="title_activity_about">О программе</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="about_image_icon"></string>
+    <string name="settingsRouteItems">Маршруты</string>
+    <string name="settingsDirectionItems">Станция по умолчанию</string>
+    <string name="settingsDirectionReverseItems">Обратная станция по умолчанию</string>
+    <string name="ok">OK</string>
+    <string name="strDefRoute">Маршрут по умолчанию</string>
+    <string name="strButtCheckRoute">Выбрать маршрут</string>
+    <string name="strCheckReverse">Инвертировать направление</string>
+    <string name="strButtCheckStations">Выбрать остановку</string>
+    <string name="settingsCaptionStations">Остановки по умолчанию</string>
+    <string name="strDefStation1">Прямая</string>
+    <string name="strDefStation2">Обратная</string>
+    <string name="about_string"> Данное приложение позволяет смотреть расписание движения общественного транспорта.\n\n При возникновении ошибок в работе, информируйте об этом, пожалуйста, на форуме пользователя <font color="blue">cahek80</font>.</string>
+    <string name="title_activity_schedule_list">Список маршрутов</string>
+    <string name="title_activity_update_module">Расписание</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="butt_check_update">Проверить обновление</string>
+    <string name="text_check_update">Проверка обновлений приложения</string>
+    <string name="strButtGoCheckUpdates">Обновление БД</string>
+    <string name="text_update_avaliable">Доступна новая версия БД расписания</string>
+    <string name="butt_updatedb">Обновить БД расписания</string>
+    <string name="text_update_db_not_avaliable">На телефоне уже установлена последняя версия БД. Загрузка не требуется.</string>
+    <string name="text_check_update2">Обновление расписания с сайта Киевпастранс</string>
+	<string name="butt_update_schedule">Обновление</string>
+	<string name="text_updated_success">Обновление выполнено успешно</string>
+</resources>

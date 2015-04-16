@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:id="@+id/MainForm"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.alex.timetable">
+
+<RadioGroup
+    android:id="@+id/RadioGroup1"
+    android:layout_width="229dp"
+    android:layout_height="36dp"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:layout_toRightOf="@+id/label1"
+    android:checkedButton="0"
+    android:orientation="horizontal" >
+
+</RadioGroup>
+
+<ToggleButton
+    android:id="@+id/WorkDaysChecker"
+    android:layout_width="157dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/RadioGroup1"
+    android:textOff="Выходной день"
+    android:textOn="Рабочий день" />
+
+<com.alex.toggleview.view.Toggle
+    android:id="@+id/on_off_toggle_view"
+    android:layout_width="fill_parent"
+    android:layout_height="55dp"
+    android:layout_marginLeft="1dp"
+    android:layout_marginTop="90dp"
+    android:layout_marginRight="1dp"
+    android:gravity="center_horizontal"
+    custom:leftText="@string/on"
+    custom:rightText="@string/off" />
+
+<TextView
+    android:id="@+id/label1"
+    android:layout_width="82dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="5dp"
+    android:text="@string/routesstr" />
+
+<TextView
+    android:id="@+id/widget59"
+    android:layout_width="154dp"
+    android:layout_height="18dp"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/on_off_toggle_view"
+    android:layout_marginTop="5dp"
+    android:layout_toLeftOf="@+id/RadioGroup1"
+    android:text="@string/stopsstr"
+    android:textColor="@color/black"
+    android:textSize="12sp" />
+
+<ListView
+    android:id="@+id/ListView1"
+    android:layout_width="177dp"
+    android:layout_height="271dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/widget59_copy"
+    android:divider="@drawable/divider" >
+
+</ListView>
+
+<ListView
+    android:id="@+id/ListView2"
+    android:layout_width="130dp"
+    android:layout_height="130dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignTop="@+id/ListView1"
+    android:cacheColorHint="#00000000"
+    android:divider="@drawable/divider" >
+
+</ListView>
+
+<TextView
+    android:id="@+id/widget59_copy"
+    android:layout_width="104dp"
+    android:layout_height="18dp"
+    android:layout_alignBaseline="@+id/widget59"
+    android:layout_alignBottom="@+id/widget59"
+    android:layout_alignLeft="@+id/ListView2"
+    android:text="@string/timestr"
+    android:textColor="@color/black"
+    android:textSize="12sp" />
+
+</RelativeLayout>
