@@ -24,19 +24,38 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView1"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
             android:text="@string/ok" />
+
+        <TextView
+            android:id="@+id/textViewLinkStr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewUpdText"
+            android:layout_alignRight="@+id/textViewUpdText"
+            android:layout_below="@+id/textViewUpdText"
+            android:layout_marginTop="14dp"
+            android:gravity="center_horizontal"
+            android:text="@string/ok" />
+
+        <TextView
+            android:id="@+id/textViewAboutNewVersAvaliable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewVersionProgram"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="@string/textNewVersAvaliable" />
 
         <TextView
             android:id="@+id/textViewUpdText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewVersionProgram"
+            android:layout_below="@+id/textViewAboutNewVersAvaliable"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:gravity="top|left"
             android:scrollHorizontally="false"
             android:text="@string/about_string"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
 </RelativeLayout>
