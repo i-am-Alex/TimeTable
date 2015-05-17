@@ -38,4 +38,5 @@
     <string name="text_check_update2">Обновление расписания с сайта Киевпастранс</string>
 	<string name="butt_update_schedule">Обновление</string>
 	<string name="text_updated_success">Обновление выполнено успешно</string>
+	<string name="text_function_deprecated">Данная функция устарела</string>
 </resources>

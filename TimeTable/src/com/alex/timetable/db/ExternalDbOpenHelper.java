@@ -62,9 +62,9 @@ public class ExternalDbOpenHelper extends SQLiteOpenHelper
 			
 			// проверка версии БД
             String[] columnsToTake = { "VERSION_DB" };
-			cursor = checkDb.query("dbversion1", columnsToTake, null, null, null, null, null);
+			cursor = checkDb.query("dbversion", columnsToTake, null, null, null, null, null);
             cursor.moveToFirst();
-			int loadedVersionDB = cursor.getInt(cursor.getColumnIndexOrThrow("VERSION_DBN"));
+			int loadedVersionDB = cursor.getInt(cursor.getColumnIndexOrThrow("VERSION_DB"));
 			// если версия БД в телефоне меньше, чем требуемая - перезаписываем её
 			if(needVersionDB > loadedVersionDB) return false;
             return (checkDb != null);// && (needVersionDB.equals(loadedVersionDB));

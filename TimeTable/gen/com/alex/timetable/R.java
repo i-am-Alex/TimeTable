@@ -66,14 +66,14 @@ containing a value of this type.
     public static final class id {
         public static final int ListView1=0x7f090009;
         public static final int ListView2=0x7f09000b;
-        public static final int ListViewShedulesUpdate=0x7f090023;
+        public static final int ListViewShedulesUpdate=0x7f090024;
         public static final int MainForm=0x7f090003;
         public static final int RadioGroup1=0x7f090004;
         public static final int SettingsCheckBox1=0x7f090019;
-        public static final int TextView1=0x7f090025;
-        public static final int TextView2=0x7f090026;
+        public static final int TextView1=0x7f090026;
+        public static final int TextView2=0x7f090027;
         public static final int WorkDaysChecker=0x7f090006;
-        public static final int action_settings=0x7f090029;
+        public static final int action_settings=0x7f09002a;
         public static final int buttUpdateShedule=0x7f09001c;
         public static final int buttonCheckUpdate=0x7f09001f;
         public static final int buttonGoCheckUpdates=0x7f09001a;
@@ -83,12 +83,13 @@ containing a value of this type.
         public static final int buttonUpdateDB=0x7f090022;
         public static final int imageView1=0x7f090000;
         public static final int label1=0x7f090005;
-        public static final int left_label=0x7f090027;
+        public static final int left_label=0x7f090028;
         public static final int on_off_toggle_view=0x7f090007;
-        public static final int right_label=0x7f090028;
+        public static final int right_label=0x7f090029;
         public static final int tableRow1=0x7f09000c;
         public static final int tableRow3=0x7f090011;
         public static final int tableRow5=0x7f090015;
+        public static final int textView1=0x7f090023;
         public static final int textViewCaptionStations=0x7f090010;
         public static final int textViewNoNewVersionDB=0x7f090020;
         public static final int textViewRoute=0x7f09000e;
@@ -105,7 +106,7 @@ containing a value of this type.
         public static final int textViewVersionProgram=0x7f090001;
         public static final int widget59=0x7f090008;
         public static final int widget59_copy=0x7f09000a;
-        public static final int widget61=0x7f090024;
+        public static final int widget61=0x7f090025;
     }
     public static final class layout {
         public static final int activity_about=0x7f030000;
@@ -155,6 +156,7 @@ containing a value of this type.
         public static final int strDefStation2=0x7f060017;
         public static final int text_check_update=0x7f06001d;
         public static final int text_check_update2=0x7f060022;
+        public static final int text_function_deprecated=0x7f060025;
         public static final int text_update_avaliable=0x7f06001f;
         public static final int text_update_db_not_avaliable=0x7f060021;
         public static final int text_updated_success=0x7f060024;
