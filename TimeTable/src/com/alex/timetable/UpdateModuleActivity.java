@@ -126,6 +126,8 @@ public class UpdateModuleActivity extends Activity {
 					publishProgress(3, 100);
 					dbReader.deleteRouteByStr("delete from stationtimes where route=" + params.getRouteId() + " and isworkday=" + params.getIsWorkDays());
 					publishProgress(4, 100);
+					
+					int firstStopNumber = dbReader.getFirstRouteStopsNumber(params.getRouteId());
 					int i = 0;
 					if (route != null) {
 						SQLiteDatabase db = dbReader.getWritableDatabase();
@@ -133,11 +135,11 @@ public class UpdateModuleActivity extends Activity {
 
 						for (EXTStop stop : route.getStopList()) {
 							for (EXTStopTime stopTime : stop.getTimeList()) {
-								if (stopTime.getPosNum() > 0 && !"".equals(stopTime.getStationTime().trim())) {
+								if (!"".equals(stopTime.getStationTime().trim())) {
 									ContentValues cv = new ContentValues();
 									cv.put("route", route.getRouteId());
 									cv.put("direction", stopTime.getFirstDirection());
-									cv.put("station", stopTime.getPosNum());
+									cv.put("station", firstStopNumber + stopTime.getPosNum());
 									cv.put("isworkday", route.isWorkDays());
 									cv.put("time", stopTime.getStationTime());
 									db.insert("stationtimes", null, cv);

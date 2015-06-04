@@ -1,5 +1,6 @@
 package com.alex.timetable.routesparser;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -99,28 +100,67 @@ public class HTMLParser {
 		List<Node> list = element.get(0).childNodes(); 
 		route.setLastUpdateDate(getDateUpdateShedule(list));
 		
+		List<EXTTmpRecordList> tmpList = new ArrayList<EXTTmpRecordList>();
+		
 		for(Node hiNode:list) {
+			EXTTmpRecordList subList = new EXTTmpRecordList();
+			
 			if(hiNode instanceof Element) {
-				EXTStop stop = new EXTStop();
 				int i = 0;
-				
 				if(firstColumnHasNumber(hiNode)) {
 					for(Node subNode: hiNode.childNodes()) {
 						if(subNode instanceof Element) {
-							EXTStopTime stopTime = new EXTStopTime();
-							stopTime.setFirstDirection((i <= halfStationsNum?0:1));
-							stopTime.setPosNum(i);
-							stopTime.setStationTime(getStationTimeFromNode(subNode));
-							stop.getTimeList().add(stopTime);
+							EXTTmpRecord rec = new EXTTmpRecord();
+							rec.setId(i);
+							rec.setValue(getStationTimeFromNode(subNode));
+							subList.getItems().add(rec);
 							i = i + 1;
 						}
 					}
 				}
-				route.addStopIfTimeListNotNull(stop);
+				if(subList != null && subList.getItems().size() > 0) tmpList.add(subList);
 			}			
 		}
+		
+		parseRightSides(tmpList, halfStationsNum);
+		for(EXTTmpRecordList rec:tmpList) {
+			EXTStop stop = new EXTStop();
+			int i = 0;
+			for(EXTTmpRecord subRec: rec.getItems()) {
+				// обрабатываем полученный нами список
+				EXTStopTime stopTime = new EXTStopTime();
+				stopTime.setFirstDirection((i < halfStationsNum?0:1));
+				stopTime.setPosNum(i);
+				stopTime.setStationTime(subRec.getValue());
+				stop.getTimeList().add(stopTime);
+				i++;
+			}
+			route.addStopIfTimeListNotNull(stop);
+		}
+		
 		return route;
+	}
 
+	private void parseRightSides(List<EXTTmpRecordList> tmpList, int halfStationsNum) {
+		if(tmpList == null || tmpList.size() <= 0) return;
+		
+		//List<EXTTmpRecordList> retList = new ArrayList<EXTTmpRecordList>();
+		int i = 0;
+		//int x = tmpList.get(0).getItems().size();
+		while(i < tmpList.get(0).getItems().size()) {
+			boolean flag = true;
+			for(EXTTmpRecordList rec:tmpList) {
+				if(((EXTTmpRecord) rec.getItems().get(i)).getValue().length() > 2) {
+					flag = false;
+					break;
+				}
+			}
+		
+			// удаляем последний пустой ряд
+			if(flag) {
+				for(EXTTmpRecordList rec:tmpList) rec.getItems().remove(i);
+			} else i++;
+		}
 	}
 
 }

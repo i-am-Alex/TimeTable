@@ -231,4 +231,23 @@ public class DatabaseReader
 		return dbOpenHelper.getWritableDatabase();
 	}
 
+	public int getFirstRouteStopsNumber(int routeId) {
+		Cursor cursor = null;
+		try {
+            String[] columnsToTake = { "_ID" };
+            cursor = sqliteDB.query("stations", columnsToTake, "route=" + String.valueOf(routeId), null, null, null, "_ID");
+
+            if(cursor.moveToFirst()) {
+                int col1 = cursor.getColumnIndexOrThrow("_ID");
+                return cursor.getInt(col1);
+            }
+            
+		} catch (Exception e) {
+			Log.e("TAG", "Failed to select number stops.", e);
+		} finally {
+			if(cursor != null) cursor.close();
+		}
+		return 0;
+	}
+
 }
